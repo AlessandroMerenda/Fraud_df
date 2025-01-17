@@ -1,2 +1,29 @@
-data/
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.log
+
+# Dataset
+data/raw/
+data/processed/
+
+# Notebook
+notebooks/*.ipynb_checkpoints/
+
+# Reports
 reports/
+*.png
+*.pdf
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Ambiente virtuale
+env/
+.venv/
+*.egg-info/
+build/
+dist/
+
