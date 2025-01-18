@@ -12,6 +12,21 @@ il progetto mira a ottenere un modello efficace e computazionalmente ottimizzato
 L'obiettivo primario è dimostrare che, con un approccio metodico e organizzato, è possibile ottenere un modello altamente performante con un costo computazionale relativamente basso,
 pur lasciando spazio a ulteriori ottimizzazioni future.
 
+
+## Dataset - "Bank Account Fraud Dataset Suite (NeurIPS 2022)"
+
+- **Dimensioni:** Il dataset di addestramento contiene 1.000.000 di righe e 50 colonne (dopo la fase di feature engineering), rappresentanti variabili numeriche, categoriche e alcune derivate.
+- **Bilanciamento:** La variabile target `fraud_bool` era fortemente sbilanciata, con una distribuzione di circa 96% di transazioni legittime e 4% di transazioni fraudolente.
+- **Caratteristiche principali:**
+  - **Realistico**, basato su dati reali per il rilevamento delle frodi.
+  - **Sbilanciato**, con una bassa prevalenza della classe positiva (frode).
+  - **Dinamico**, con dati temporali che riflettono distribuzioni mutevoli.
+  - **Privacy preserving**, grazie all'applicazione di tecniche di privacy differenziale (aggiunta di rumore), codifica delle feature e utilizzo di un modello generativo (CTGAN).
+- **Bilanciamento finale:** Il bilanciamento delle classi è stato ottenuto tramite l'algoritmo SMOTE, portando il dataset bilanciato a 1.979.742 righe.
+
+LINK TO DATAFRAME: https://www.kaggle.com/datasets/sgpjesus/bank-account-fraud-dataset-neurips-2022
+
+
 ## Struttura del progetto
 
 Il progetto è organizzato come segue:
@@ -39,7 +54,7 @@ ANALISI_FRODI/
 
 ## Risultati
 
-Il modello Random Forest ha raggiunto prestazioni eccellenti:
+Il modello Random Forest ha raggiunto prestazioni elevate:
 - **ROC-AUC medio:** 0.9991
 - **Precisione media:** 0.9921
 - **Recall media:** 0.9921
@@ -54,6 +69,7 @@ Le dipendenze del progetto sono specificate nel file `environment.yml`. Per ricr
 conda env create -f environment.yml
 ```
 
+
 ## Come eseguire il progetto
 
 1. **Preprocessing dei dati:**
@@ -66,9 +82,10 @@ conda env create -f environment.yml
 3. **Addestramento del modello:**
    - Eseguire `RandomForest.ipynb` per addestrare e validare il modello Random Forest.
 
+
 ## Ulteriori sviluppi
 
-Sebbene il progetto abbia raggiunto risultati notevoli, sono stati identificati alcuni possibili miglioramenti per future iterazioni:
+Sebbene il progetto abbia raggiunto risultati notevoli, sono certamente identificabili alcuni possibili miglioramenti per future iterazioni:
 
 - **Bayesian Optimization:** Ottimizzare ulteriormente i parametri del modello con tecniche avanzate di ricerca degli iperparametri.
 - **Confronto con altri algoritmi:** Implementare e valutare modelli come XGBoost e LightGBM per un confronto delle prestazioni.
@@ -79,8 +96,7 @@ Con più tempo e risorse, questi miglioramenti potrebbero portare a un sistema a
 
 ---
 
-Questo progetto rappresenta un punto di partenza solido per affrontare il problema delle frodi bancarie, bilanciando prestazioni e costi computazionali.
-I futuri sviluppi delineati consentiranno di spingersi oltre, garantendo un impatto ancora maggiore.
+Questo progetto rappresenta un punto di partenza affidabile per affrontare il complesso problema delle frodi bancarie, dimostrando che con un metodo ben strutturato è possibile ottenere risultati significativi bilanciando prestazioni e costi computazionali. Ad ogni modo, il machine learning è un terreno in continua evoluzione, che offre costantemente nuove opportunità per migliorare e ottimizzare, anche laddove i risultati sembrano già molto soddisfacenti.  Questo progetto non è solo una tappa, ma un invito a spingersi oltre, a ottimizzare ulteriormente e a esplorare soluzioni innovative per portare il modello a livelli di accuratezza ancora più alti.
 
 
 
@@ -95,6 +111,7 @@ ENGLISH
 
 # Banking Fraud Analysis and Prevention: A Multidimensional Approach
 
+
 ## Project Description
 
 This project was designed with the goal of developing a machine learning model to detect and prevent banking fraud.
@@ -105,6 +122,21 @@ The primary objective is to demonstrate that, with a methodical and organized ap
 with relatively low computational costs, while leaving room for further future optimizations.
 
 Additionally, this project integrates the transformation of non-numerical data and an initial, automated operation of feature engineering, involving the creation of derived features.
+
+
+## Dataset - "Bank Account Fraud Dataset Suite (NeurIPS 2022)"
+
+- **Size:** The training dataset contains 1,000,000 rows and 50 columns (after feature engineering), representing numerical, categorical, and some derived variables.
+- **Class Imbalance:** The target variable `fraud_bool` was highly imbalanced, with approximately 96% legitimate transactions and 4% fraudulent transactions.
+- **Key Features:**
+  - **Realistic**, based on real-world data for fraud detection.
+  - **Imbalanced**, with a low prevalence of the positive class (fraud).
+  - **Dynamic**, including temporal data that reflects changing distributions.
+  - **Privacy preserving**, achieved through differential privacy techniques (noise addition), feature encoding, and the use of a generative model (CTGAN).
+- **Final Balancing:** Class balancing was achieved using the SMOTE algorithm, resulting in a balanced dataset with 1,979,742 rows.
+
+LINK TO DATAFRAME: https://www.kaggle.com/datasets/sgpjesus/bank-account-fraud-dataset-neurips-2022
+
 
 ## Project Structure
 
@@ -131,6 +163,7 @@ ANALISI_FRODI/
 ├── README.md                         # Project documentation
 ```
 
+
 ## Results
 
 The Random Forest model achieved excellent performance:
@@ -141,12 +174,14 @@ The Random Forest model achieved excellent performance:
 
 These results were obtained through careful data balancing (SMOTE) and cross-validation with Starfield, ensuring a robust and generalizable model.
 
+
 ## Dependencies
 
 The project dependencies are specified in the `environment.yml` file. To recreate the environment:
 ```bash
 conda env create -f environment.yml
 ```
+
 
 ## How to Execute the Project
 
@@ -159,6 +194,7 @@ conda env create -f environment.yml
 
 3. **Model Training:**
    - Run `RandomForest.ipynb` to train and validate the Random Forest model.
+
 
 ## Further Developments
 
@@ -173,5 +209,4 @@ With more time and resources, these improvements could lead to an even more accu
 
 ---
 
-This project represents a solid starting point for addressing the issue of banking fraud, balancing performance and computational costs.
-The outlined future developments will allow for further advancements, ensuring an even greater impact.
+This project serves as a reliable starting point for tackling the complex challenge of banking fraud, demonstrating that with a well-structured approach, it is possible to achieve significant results while balancing performance and computational costs. That said, machine learning is an ever-evolving field, constantly offering new opportunities for improvement and optimization, even when the results already seem highly satisfactory. This project is not just a milestone but an invitation to go further, to optimize even more, and to explore innovative solutions to elevate the model to even greater levels of accuracy.
